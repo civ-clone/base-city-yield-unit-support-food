@@ -1,4 +1,5 @@
 # base-city-yield-unit-support-food
 
-This is a template repo.
+A value object for storing the value of `Unit` support costs related to `Food`.
 
+Results in a `NegativeYield` (which negates all the values `add`ed, `set` and `subtract`ed).

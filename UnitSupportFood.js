@@ -13,10 +13,11 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var _UnitSupportFood_unit;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UnitSupportFood = void 0;
-const Yield_1 = require("@civ-clone/core-yield/Yield");
-class UnitSupportFood extends Yield_1.default {
-    constructor(value, unit) {
-        super(value, unit.id());
+const Food_1 = require("@civ-clone/base-terrain-yield-food/Food");
+const NegativeYield_1 = require("@civ-clone/core-yield/NegativeYield");
+class UnitSupportFood extends Food_1.default {
+    constructor(value = 0, unit = null) {
+        super(value, unit ? unit.id() : 'none');
         _UnitSupportFood_unit.set(this, void 0);
         __classPrivateFieldSet(this, _UnitSupportFood_unit, unit, "f");
         this.addKey('unit');
@@ -27,5 +28,6 @@ class UnitSupportFood extends Yield_1.default {
 }
 exports.UnitSupportFood = UnitSupportFood;
 _UnitSupportFood_unit = new WeakMap();
+(0, NegativeYield_1.makeNegative)(UnitSupportFood);
 exports.default = UnitSupportFood;
 //# sourceMappingURL=UnitSupportFood.js.map
