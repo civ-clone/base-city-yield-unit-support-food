@@ -4,18 +4,18 @@ import Yield from '@civ-clone/core-yield/Yield';
 import { makeNegative } from '@civ-clone/core-yield/NegativeYield';
 
 export class UnitSupportFood extends Food {
-  #unit: Unit | null;
+  private _unit: Unit | null;
 
   constructor(value: Yield | number = 0, unit: Unit | null = null) {
     super(value, unit ? unit.id() : 'none');
 
-    this.#unit = unit;
+    this._unit = unit;
 
     this.addKey('unit');
   }
 
   unit(): Unit | null {
-    return this.#unit;
+    return this._unit;
   }
 }
 
